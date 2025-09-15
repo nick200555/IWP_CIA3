@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHRIST University - Research & Publications ERP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fade-in 1.2s ease forwards; }
+  </style>
+</head>
+<body class="min-h-screen font-sans bg-gray-50 text-gray-900">
+
+<!-- Hero Section with Video Background -->
+<header class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+  
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline 
+         class="absolute inset-0 w-full h-full object-cover">
+    <source src="video.mp4" type="video/mp4" />
+    <!-- fallback -->
+    Your browser does not support the video tag.
+  </video>
+  <img src="CHRIST-Logo-New.jpg" 
+         alt="CHRIST University Logo" 
+         class="absolute top-6 left-6 w-30 h-28 object-contain animate-fade-in" />
+
+  <!-- Overlay (optional for readability) -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 container mx-auto px-6">
+    
+    <!-- Logo in Top-Left -->
+   
+    <!-- Centered Text -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-3 animate-fade-in">
+      CHRIST (Deemed to be University)
+    </h1>
+    <h2 class="text-2xl md:text-3xl font-semibold mb-6 animate-fade-in">
+      Research & Publications ERP
+    </h2>
+    <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in text-gray-100">
+      Advancing knowledge through innovative research, groundbreaking publications,
+      and transformative academic excellence.
+    </p>
+    <a href="login.html"
+       class="inline-block bg-white text-blue-700 hover:bg-blue-50 font-semibold px-8 py-3 text-lg rounded-lg shadow-md transition">
+      Sign-in/Login 
+    </a>
+  </div>
+</header>
+
+
+
+ <!-- Featured Research Projects -->
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h3 class="text-4xl font-bold text-center mb-4 text-gray-900">Featured Research Projects</h3>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+      Showcasing our pioneering research across diverse disciplines, driving innovation and impact.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden">
+        <img src="pic1.jpg" alt="AI & Machine Learning Research" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <h4 class="font-semibold text-xl text-gray-900 mb-2">AI & Machine Learning</h4>
+          <p class="text-gray-600 text-sm">
+            Advanced AI research in machine learning and data science.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden">
+        <img src="pic2.jpg" alt="Biotechnology Innovation" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <h4 class="font-semibold text-xl text-gray-900 mb-2">Biotechnology Innovation</h4>
+          <p class="text-gray-600 text-sm">
+            Cutting-edge biotechnology and life sciences research.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden">
+        <img src="pic3.jpg" alt="Engineering Excellence" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <h4 class="font-semibold text-xl text-gray-900 mb-2">Engineering Excellence</h4>
+          <p class="text-gray-600 text-sm">
+            Robotics, automation, and engineering innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h3 class="text-4xl font-bold text-center mb-4 text-gray-900">Our Key Features</h3>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+      Empowering researchers and faculty with tools to manage projects, publications, and achievements.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="text-center p-8 bg-gray-50 rounded-xl hover:shadow-md transition">
+        <div class="w-16 h-16 bg-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">📊</div>
+        <h4 class="text-xl font-semibold mb-3">Research Management</h4>
+        <p class="text-gray-600 text-sm">
+          Manage research projects, collaborations, and funding efficiently.
+        </p>
+      </div>
+
+      <div class="text-center p-8 bg-gray-50 rounded-xl hover:shadow-md transition">
+        <div class="w-16 h-16 bg-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">📚</div>
+        <h4 class="text-xl font-semibold mb-3">Publications Tracking</h4>
+        <p class="text-gray-600 text-sm">
+          Maintain a central repository of academic publications and articles.
+        </p>
+      </div>
+
+      <div class="text-center p-8 bg-gray-50 rounded-xl hover:shadow-md transition">
+        <div class="w-16 h-16 bg-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">🏆</div>
+        <h4 class="text-xl font-semibold mb-3">Awards & Patents</h4>
+        <p class="text-gray-600 text-sm">
+          Showcase faculty achievements, awards, and intellectual property.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-blue-900 text-white py-12">
+  <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+    <!-- About -->
+    <div>
+      <h4 class="font-semibold text-lg mb-3">About Us</h4>
+      <p class="text-gray-300 text-sm">
+        CHRIST University fosters academic excellence and innovation through impactful research and publications.
+      </p>
+    </div>
+    
+    <!-- Quick Links -->
+  
+    
+    <!-- Contact -->
+    <div>
+      <h4 class="font-semibold text-lg mb-3">Contact</h4>
+      <p class="text-gray-300 text-sm">Bengaluru, India</p>
+      <p class="text-gray-300 text-sm">research@christuniversity.in</p>
+    </div>
+  </div>
+  <div class="mt-8 text-center text-gray-400 text-sm border-t border-white/20 pt-6">
+    © 2025 CHRIST University - Department of Research & Innovation
+  </div>
+</footer>
+
+
+</body>
+</html>

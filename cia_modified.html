@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHRIST University - Research & Publications ERP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fade-in 1.2s ease forwards; }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .section {
+      display: none;
+    }
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .sidebar .nav-link {
+      text-align: left;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    .sidebar .nav-link.active {
+      background-color: #0d6efd;
+      color: white !important;
+      font-weight: bold;
+    }
+    .main-content {
+      padding-left: 20px;
+    }
+    @media (max-width: 992px) {
+      .sidebar {
+        height: auto;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .main-content {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans bg-gray-50 text-gray-900">
+
+<!-- Hero Section with Video Background -->
+<!-- Sticky Small Header (Always visible on scroll) -->
+<div id="miniHeaderBar" class="fixed top-0 left-0 w-full bg-blue-900 text-white z-50 flex items-center justify-between px-6 h-20 shadow-md">
+  <div class="flex items-center space-x-3">
+    <img src="CHRIST-Logo-New.jpg" alt="Logo" class="w-18 h-16 object-contain">
+    <span class="font-semibold text-lg">DEPARTMENT OF AIML & DATA SCIENCE</span>
+    <div>
+        <span class="me-3"></span>
+        <a href="login.html" class="btn btn-light btn-sm">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Hero Section -->
+<header class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+    <source src="video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 container mx-auto px-6">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3 animate-fade-in">CHRIST (Deemed to be University)</h1>
+    <h2 class="text-2xl md:text-3xl font-semibold mb-6 animate-fade-in">Research & Publications ERP</h2>
+    <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in text-gray-100">
+      Advancing knowledge through innovative research, groundbreaking publications,
+      and transformative academic excellence.
+    </p>
+  </div>
+</header>
+
+
+ <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar Navigation -->
+      <div class="col-lg-3 col-md-4 sidebar bg-light p-3">
+        <h4 class="mb-4 text-primary" style="text-align: center">RESEARCH ERP</h4>
+        <nav class="nav flex-column" style="background-color: rgb(18, 4, 8)">
+          <button class="btn btn-outline-primary nav-link active" data-target="externalFunded">External Funded Projects</button>
+          <button class="btn btn-outline-primary nav-link" data-target="booksPublications">Books & Publications</button>
+          <button class="btn btn-outline-primary nav-link" data-target="articles">Research Articles & Journals</button>
+          <button class="btn btn-outline-primary nav-link" data-target="conferences">Seminars / Conferences</button>
+          <button class="btn btn-outline-primary nav-link" data-target="workshops">Workshops / FDP / QIP / MOOC</button>
+          <button class="btn btn-outline-primary nav-link" data-target="awards">Awards & Achievements</button>
+          <button class="btn btn-outline-primary nav-link" data-target="patents">Patents</button>
+<button class="btn btn-outline-primary nav-link" data-target="viewProjects">View Saved Projects</button>
+        </nav>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-lg-9 col-md-8 main-content p-4">
+        <!-- External Funded Research Projects -->
+        <section id="externalFunded" class="section">
+          <h3 class="mb-3">External Funded Research Project</h3>
+          <form id="projectForm" onsubmit="saveProject(event)">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Title of the Fund</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Date Received</label>
+              <div class="col-sm-9"><input type="date" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Principal Investigator</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Co‑Principal Investigator</label>
+              <div class="col-sm-9"><input type="text" class="form-control"></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Amount Received (₹)</label>
+              <div class="col-sm-9"><input type="number" class="form-control" step="0.01" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Funding Agency Name</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Government / Non‑Government</label>
+              <div class="col-sm-9">
+                <select class="form-select" required>
+                  <option disabled selected value="">Choose...</option>
+                  <option>Government</option>
+                  <option>Non‑Government</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <label class="col-sm-3 col-form-label">Document Proof</label>
+              <div class="col-sm-9"><input type="file" class="form-control" accept="application/pdf,image/*"></div>
+            </div>
+            <button type="submit" class="btn btn-success">Save Project</button>
+          </form>
+        </section>
+
+        <!-- Books & Publications -->
+        <section id="booksPublications" class="section">
+          <h3 class="mb-3">Books & Publications by Faculty</h3>
+          <form>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Book Type</label>
+              <div class="col-sm-9"><input type="text" class="form-control" placeholder="e.g., Textbook, Edited Volume" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Authored / Co‑Authored</label>
+              <div class="col-sm-9"><input type="text" class="form-control" placeholder="e.g., Authored" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Title of the Book</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">ISBN</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Year of Publication</label>
+              <div class="col-sm-9"><input type="number" class="form-control" min="1900" max="2100" required></div>
+            </div>
+            <div class="row mb-4">
+              <label class="col-sm-3 col-form-label">Proof Documents</label>
+              <div class="col-sm-9"><input type="file" class="form-control" accept="application/pdf,image/*"></div>
+            </div>
+            <button type="submit" class="btn btn-success">Save Book</button>
+          </form>
+        </section>
+
+        <!-- Research Articles & Journals -->
+        <section id="articles" class="section">
+          <h3 class="mb-3">Articles & Research Journals</h3>
+          <form>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Title of Article</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Authors / Co‑Authors</label>
+              <div class="col-sm-9"><input type="text" class="form-control" placeholder="Comma‑separated list" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Indexing Agency</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Publisher Name</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">ISSN</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Publication Date</label>
+              <div class="col-sm-9"><input type="date" class="form-control" required></div>
+            </div>
+            <div class="row mb-4">
+              <label class="col-sm-3 col-form-label">Document Proof</label>
+              <div class="col-sm-9"><input type="file" class="form-control" accept="application/pdf,image/*"></div>
+            </div>
+            <button type="submit" class="btn btn-success">Save Article</button>
+          </form>
+        </section>
+
+        <!-- Seminars / Conferences -->
+        <section id="conferences" class="section">
+          <h3 class="mb-3">Seminars & Conferences</h3>
+          <form>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Title</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Name of Authors</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Date</label>
+              <div class="col-sm-9"><input type="date" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Conference Name</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Place of Conference</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-4">
+              <label class="col-sm-3 col-form-label">Proof Documents</label>
+              <div class="col-sm-9"><input type="file" class="form-control" accept="application/pdf,image/*"></div>
+            </div>
+            <button type="submit" class="btn btn-success">Save Conference</button>
+          </form>
+        </section>
+
+        <!-- Workshops / FDP / QIP / MOOC -->
+        <section id="workshops" class="section">
+          <h3 class="mb-3">Workshops / FDP / QIP / MOOC</h3>
+          <form>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Title</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Location</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Start Date</label>
+              <div class="col-sm-9"><input type="date" class="form-control" id="workStart" onchange="calcDays()" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">End Date</label>
+              <div class="col-sm-9"><input type="date" class="form-control" id="workEnd" onchange="calcDays()" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Number of Days</label>
+              <div class="col-sm-9"><input type="number" class="form-control" id="workDays" readonly></div>
+            </div>
+            <div class="row mb-4">
+              <label class="col-sm-3 col-form-label">Proof Documentation</label>
+              <div class="col-sm-9"><input type="file" class="form-control" accept="application/pdf,image/*"></div>
+            </div>
+            <button type="submit" class="btn btn-success">Save Workshop</button>
+          </form>
+        </section>
+
+        <!-- Awards & Achievements -->
+        <section id="awards" class="section">
+          <h3 class="mb-3">Awards & Achievements</h3>
+          <form>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Title</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Agency</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Place</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Date</label>
+              <div class="col-sm-9"><input type="date" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Government / Non‑Government</label>
+              <div class="col-sm-9">
+                <select class="form-select" required>
+                  <option disabled selected value="">Choose...</option>
+                  <option>Government</option>
+                  <option>Non‑Government</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Save Award</button>
+          </form>
+        </section>
+
+        <!-- Patents -->
+        <section id="patents" class="section">
+          <h3 class="mb-3">Patents</h3>
+          <form>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Title</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Applicant(s) / Author(s)</label>
+              <div class="col-sm-9"><input type="text" class="form-control" placeholder="Comma‑separated list" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Granted / Published</label>
+              <div class="col-sm-9">
+                <select class="form-select" required>
+                  <option disabled selected value="">Choose...</option>
+                  <option>Granted</option>
+                  <option>Published</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Type of Patent</label>
+              <div class="col-sm-9">
+                <select class="form-select" required>
+                  <option disabled selected value="">Choose...</option>
+                  <option>National</option>
+                  <option>International</option>
+                  <option>Commercial</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Publication Number</label>
+              <div class="col-sm-9"><input type="text" class="form-control" required></div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Filing Date</label>
+              <div class="col-sm-9"><input type="date" class="form-control" required></div>
+            </div>
+            <div class="row mb-4">
+              <label class="col-sm-3 col-form-label">Accepted Date</label>
+              <div class="col-sm-9"><input type="date" class="form-control"></div>
+            </div>
+            <div class="row mb-4">
+              <label class="col-sm-3 col-form-label">Proof Document</label>
+              <div class="col-sm-9"><input type="file" class="form-control" accept="application/pdf,image/*"></div>
+            </div>
+            <button type="submit" class="btn btn-success">Save Patent</button>
+          </form>
+        </section>
+
+<!-- View Projects -->
+<section id="viewProjects" class="section">
+  <h3 class="mb-3">Saved External Funded Projects</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th>Title of the Fund</th>
+          <th>Date Received</th>
+          <th>Principal Investigator</th>
+          <th>Co-PI</th>
+          <th>Amount (₹)</th>
+          <th>Agency</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody id="projectTableBody">
+        <tr>
+          <td colspan="7" class="text-center">No data available. (Data integration pending)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS & Custom Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    // Save project to localStorage
+    function saveProject(event) {
+      event.preventDefault();
+
+      const form = document.getElementById('projectForm');
+      const data = {
+        title: form.querySelectorAll('input[type="text"]')[0].value,
+        date: form.querySelectorAll('input[type="date"]')[0].value,
+        pi: form.querySelectorAll('input[type="text"]')[1].value,
+        coPi: form.querySelectorAll('input[type="text"]')[2].value,
+        amount: form.querySelector('input[type="number"]').value,
+        agency: form.querySelectorAll('input[type="text"]')[3].value,
+        type: form.querySelector('select').value
+      };
+
+      let projects = JSON.parse(localStorage.getItem('projects')) || [];
+      projects.push(data);
+      localStorage.setItem('projects', JSON.stringify(projects));
+
+      alert('Project saved!');
+      form.reset();
+    }
+
+    // Show projects from localStorage
+    document.querySelector('[data-target="viewProjects"]').addEventListener('click', () => {
+      const projects = JSON.parse(localStorage.getItem('projects')) || [];
+      const tbody = document.getElementById('projectTableBody');
+
+      if (projects.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="text-center">No data available.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = '';
+      projects.forEach(proj => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${proj.title}</td>
+          <td>${proj.date}</td>
+          <td>${proj.pi}</td>
+          <td>${proj.coPi}</td>
+          <td>${proj.amount}</td>
+          <td>${proj.agency}</td>
+          <td>${proj.type}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    });
+
+  </script>
+  <script>
+    const buttons = document.querySelectorAll('[data-target]');
+    const sections = document.querySelectorAll('.section');
+
+    function showSection(id, element) {
+      // Hide all sections
+      sections.forEach(sec => {
+        sec.style.display = 'none';
+      });
+      
+      // Show the selected section
+      document.getElementById(id).style.display = 'block';
+      
+      // Remove active class from all buttons
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Add active class to clicked button
+      if (element) {
+        element.classList.add('active');
+      } else {
+        // Find the button that corresponds to this section and activate it
+        const correspondingBtn = document.querySelector(`[data-target="${id}"]`);
+        if (correspondingBtn) {
+          correspondingBtn.classList.add('active');
+        }
+      }
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        showSection(this.dataset.target, this);
+      });
+    });
+
+    function calcDays() {
+      const start = document.getElementById('workStart').value;
+      const end = document.getElementById('workEnd').value;
+      const daysField = document.getElementById('workDays');
+      if (start && end) {
+        const diffTime = new Date(end) - new Date(start);
+        const diffDays = diffTime / (1000 * 60 * 60 * 24) + 1; // inclusive
+        daysField.value = diffDays > 0 ? diffDays : '';
+      }
+    }
+  
+    // Save project to localStorage
+    function saveProject(event) {
+      event.preventDefault();
+
+      const form = document.getElementById('projectForm');
+      const data = {
+        title: form.querySelectorAll('input[type="text"]')[0].value,
+        date: form.querySelectorAll('input[type="date"]')[0].value,
+        pi: form.querySelectorAll('input[type="text"]')[1].value,
+        coPi: form.querySelectorAll('input[type="text"]')[2].value,
+        amount: form.querySelector('input[type="number"]').value,
+        agency: form.querySelectorAll('input[type="text"]')[3].value,
+        type: form.querySelector('select').value
+      };
+
+      let projects = JSON.parse(localStorage.getItem('projects')) || [];
+      projects.push(data);
+      localStorage.setItem('projects', JSON.stringify(projects));
+
+      alert('Project saved!');
+      form.reset();
+    }
+
+    // Show projects from localStorage
+    document.querySelector('[data-target="viewProjects"]').addEventListener('click', () => {
+      const projects = JSON.parse(localStorage.getItem('projects')) || [];
+      const tbody = document.getElementById('projectTableBody');
+
+      if (projects.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="text-center">No data available.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = '';
+      projects.forEach(proj => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${proj.title}</td>
+          <td>${proj.date}</td>
+          <td>${proj.pi}</td>
+          <td>${proj.coPi}</td>
+          <td>${proj.amount}</td>
+          <td>${proj.agency}</td>
+          <td>${proj.type}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    });
+
+  </script>
+<!-- Footer -->
+<footer class="bg-blue-900 text-white py-12">
+  <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+    <!-- About -->
+    <div>
+      <h4 class="font-semibold text-lg mb-3">About Us</h4>
+      <p class="text-gray-300 text-sm">
+        CHRIST University fosters academic excellence and innovation through impactful research and publications.
+      </p>
+    </div>
+    
+    <!-- Quick Links -->
+  
+    
+    <!-- Contact -->
+    <div>
+      <h4 class="font-semibold text-lg mb-3">Contact</h4>
+      <p class="text-gray-300 text-sm">Bengaluru, India</p>
+      <p class="text-gray-300 text-sm">research@christuniversity.in</p>
+    </div>
+  </div>
+  <div class="mt-8 text-center text-gray-400 text-sm border-t border-white/20 pt-6">
+    © 2025 CHRIST University - Department of Research & Innovation
+  </div>
+</footer>
+
+
+</body>
+</html>
